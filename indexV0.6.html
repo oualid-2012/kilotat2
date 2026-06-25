@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxers Club Morocco | فصّل البوكس ديال 3 أشهر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c5a028; /* Gold pro clear */
+            --bg-light: #f7fafc; /* White/Gray clean background */
+            --bg-card: #ffffff; /* Pure white for cards */
+            --text-dark: #1a202c;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(180deg, #edf2f7 0%, var(--bg-light) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            background-color: var(--text-dark);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        h1 span {
+            color: var(--primary);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 10px auto;
+            }
+            h1 { font-size: 1.9rem; }
+            .item-top { flex-direction: column; text-align: center; gap: 15px; }
+            .product-img { width: 100% !important; height: 160px !important; }
+        }
+
+        .price-sticky {
+            background: var(--text-dark);
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .price-sticky .amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        /* Card Selector - Premium White Style with Image integration */
+        .item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+
+        .item-card:hover {
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            border-color: #cbd5e0;
+        }
+
+        .item-top {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Image Box styling */
+        .product-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #f8fafc;
+        }
+
+        .item-details {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .item-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .item-info .title {
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+        }
+
+        .item-info .price-tag {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-top: 2px;
+        }
+
+        .counter-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .counter-btn {
+            background: #edf2f7;
+            color: var(--text-dark);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .counter-btn:hover {
+            background: var(--text-dark);
+            color: #fff;
+        }
+
+        .counter-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .size-select-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .size-select-box label {
+            margin-bottom: 0;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+
+        .size-dropdown {
+            padding: 8px 12px !important;
+            font-size: 0.95rem !important;
+            width: 130px !important;
+            background: #fff !important;
+            color: var(--text-dark) !important;
+            border: 1px solid #cbd5e0 !important;
+        }
+
+        /* Checkout Form White Clean */
+        .checkout-box {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+        }
+
+        .checkout-box h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"], input[type="tel"], select {
+            width: 100%;
+            padding: 14px;
+            background: #fff;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            text-align: right;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--text-dark);
+            box-shadow: 0 0 0 3px rgba(26, 32, 44, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--text-dark);
+            color: #fff;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-submit:hover {
+            background: #2d3748;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* Custom Modal Styling Pro */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-icon {
+            background: #c5a028;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 4px 10px rgba(197, 160, 40, 0.3);
+        }
+
+        .modal-content h2 {
+            font-size: 1.8rem;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p.highlight {
+            color: #c5a028;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-close-modal {
+            background: #1a202c;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+
+        .btn-close-modal:hover {
+            background: #2d3748;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/212701501350?text=سلام،+بغيت+نسول+على+اشتراك+الملابس+الداخلية" class="whatsapp-float" target="_blank">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M12.004 2c-5.525 0-10 4.477-10 10 0 1.761.461 3.42 1.267 4.873l-1.347 4.915 5.038-1.321c1.405.768 3.003 1.205 4.704 1.205 5.524 0 10-4.477 10-10s-4.476-10-10-10zm5.952 14.195c-.246.693-1.42 1.371-1.947 1.417-.48.041-.963.221-3.084-.613-2.551-1.002-4.14-3.647-4.266-3.816-.127-.168-1.029-1.368-1.029-2.61 0-1.242.648-1.854.88-2.103.23-.249.508-.312.678-.312.169 0 .338.001.485.008.15.007.351-.057.551.424.201.484.688 1.677.747 1.797.06.12.1.259.02.418-.081.16-.12.259-.241.399-.12.14-.253.313-.362.42-.12.119-.244.249-.105.489.14.239.619 1.023 1.328 1.654.914.815 1.685 1.066 1.925 1.186.239.12.38.101.522-.06.142-.162.61-.71.772-.952.163-.243.325-.203.549-.122.224.081 1.423.672 1.666.793.244.12.406.182.466.284.061.101.061.587-.185 1.28z"/>
+        </svg>
+        تواصل معنا
+    </a>
+
+    <div id="successModal" class="custom-modal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h2>طلبك داز بنجاح! 🚀</h2>
+            <p>الكوموند ديالك دازت بنجاح، غادي نتاصلو بك ف أقرب وقت ممكن ف الهاتف باش نأكدو معاك الطلبية.</p>
+            <p class="highlight">كون على القرص! 🫡</p>
+            <button onclick="closeSuccessModal()" class="btn-close-modal">مفهوم</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="badge">توصيل مجاني وسريع لجميع المدن المغربية 🇲🇦</div>
+        <h1>فصّل <span>البوكس ديالك</span> كيف بغيتي!</h1>
+        <p class="subtitle">اختار شحال محتاج من حبة والمقاس ديال كل حاجة بوحدها. قطن 100% عالي الجودة، والبوكس كيوصلك جديد كولّا 3 أشهر.</p>
+    </header>
+
+    <div class="container">
+        
+        <div>
+            <div class="price-sticky">
+                <div style="font-size: 0.95rem; opacity: 0.9;">مجموع البوكس (كل 3 أشهر):</div>
+                <div class="amount"><span id="totalPrice">0</span> درهم</div>
+                <small style="color: var(--primary); font-weight: bold;">+ توصيل فابور</small>
+            </div>
+
+            <h2 style="font-size: 1.4rem; margin-bottom: 15px;">1. حدد الكمية والمقاس لكل نوع:</h2>
+
+            <!-- Boxer Card -->
+            <div class="item-card">
+                <div class="item-top">
+                    <img src="boxer.jpg" alt="Boxer Premium" class="product-img">
+                    <div class="item-details">
+                        <div class="item-info">
+                            <div class="title">Boxer Premium (كيلوط)</div>
+                            <div class="price-tag">35 درهم / حبة</div>
+                        </div>
+                        <div class="counter-box">
+                            <button class="counter-btn" onclick="updateQty('boxer', -1)">-</button>
+                            <div class="counter-value" id="qty-boxer">0</div>
+                            <button class="counter-btn" onclick="updateQty('boxer', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-bottom" id="size-container-boxer" style="display: none;">
+                    <div class="size-select-box">
+                        <label>مقاس الكيلوط:</label>
+                        <select id="size-boxer" class="size-dropdown">
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL" selected>XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dibardo Card -->
+            <div class="item-card">
+                <div class="item-top">
+                    <img src="dibardo.jpg" alt="Débardeur Premium" class="product-img">
+                    <div class="item-details">
+                        <div class="item-info">
+                            <div class="title">Débardeur / T-shirt (ديباردو)</div>
+                            <div class="price-tag">45 درهم / حبة</div>
+                        </div>
+                        <div class="counter-box">
+                            <button class="counter-btn" onclick="updateQty('dibardo', -1)">-</button>
+                            <div class="counter-value" id="qty-dibardo">0</div>
+                            <button class="counter-btn" onclick="updateQty('dibardo', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-bottom" id="size-container-dibardo" style="display: none;">
+                    <div class="size-select-box">
+                        <label>مقاس الديباردو:</label>
+                        <select id="size-dibardo" class="size-dropdown">
+                            <option value="M">M</option>
+                            <option value="L" selected>L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- T9achar Card -->
+            <div class="item-card">
+                <div class="item-top">
+                    <img src="t9achar.jpg" alt="T9achar Premium" class="product-img">
+                    <div class="item-details">
+                        <div class="item-info">
+                            <div class="title">T9achar Premium (تقاشر)</div>
+                            <div class="price-tag">15 درهم / حبة</div>
+                        </div>
+                        <div class="counter-box">
+                            <button class="counter-btn" onclick="updateQty('t9achar', -1)">-</button>
+                            <div class="counter-value" id="qty-t9achar">0</div>
+                            <button class="counter-btn" onclick="updateQty('t9achar', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-bottom" id="size-container-t9achar" style="display: none;">
+                    <div class="size-select-box">
+                        <label>مقاس التقاشر:</label>
+                        <select id="size-t9achar" class="size-dropdown">
+                            <option value="39-42">39-42</option>
+                            <option value="43-46">43-46</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-box">
+            <h3>2. معلومات التوصيل</h3>
+            <form id="customOrderForm">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" placeholder="محمد العلمي" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" placeholder="0600000000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" placeholder="الدار البيضاء، طنجة..." required>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-submit">تأكيد طلب البوكس (الدفع عند الاستلام)</button>
+                <p style="text-align: center; font-size: 0.85rem; margin-top: 15px; color: var(--text-muted);">🔒 كتوصل بالبوكس عاد كتخلص الحساب.</p>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        const prices = { boxer: 35, dibardo: 45, t9achar: 15 };
+        const quantities = { boxer: 0, dibardo: 0, t9achar: 0 };
+
+        function updateQty(item, change) {
+            let newQty = quantities[item] + change;
+            if (newQty >= 0) {
+                quantities[item] = newQty;
+                document.getElementById(`qty-${item}`).innerText = newQty;
+                
+                const sizeContainer = document.getElementById(`size-container-${item}`);
+                if (newQty > 0) {
+                    sizeContainer.style.display = 'flex';
+                } else {
+                    sizeContainer.style.display = 'none';
+                }
+                
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            let total = (quantities.boxer * prices.boxer) + 
+                        (quantities.dibardo * prices.dibardo) + 
+                        (quantities.t9achar * prices.t9achar);
+            document.getElementById('totalPrice').innerText = total;
+        }
+
+        document.getElementById('customOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let total = parseInt(document.getElementById('totalPrice').innerText);
+            if(total === 0) {
+                alert('عفاك اختار على الأقل حبة واحدة باش تفتح البوكس ديالك!');
+                return;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'جاري إرسال طلبك...';
+
+            let packDetails = [];
+            if(quantities.boxer > 0) packDetails.push(`Boxer: ${quantities.boxer} (Size: ${document.getElementById('size-boxer').value})`);
+            if(quantities.dibardo > 0) packDetails.push(`Dibardo: ${quantities.dibardo} (Size: ${document.getElementById('size-dibardo').value})`);
+            if(quantities.t9achar > 0) packDetails.push(`T9achar: ${quantities.t9achar} (Size: ${document.getElementById('size-t9achar').value})`);
+
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                city: document.getElementById('city').value,
+                size: "مـفصل", 
+                pack: `${packDetails.join(' | ')} [Total: ${total} DH/3 Months]`
+            };
+
+            const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbx1pt4tl6QvjMS4EZ2BTc9hJpJLAQTo0Xc73OWi9W58Svwt8nrFO8p4c8vSA3OmNZ5d2A/exec';
+
+            fetch(googleScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                document.getElementById('successModal').style.display = 'flex';
+                document.getElementById('customOrderForm').reset();
+                quantities.boxer = 0; quantities.dibardo = 0; quantities.t9achar = 0;
+                ['boxer', 'dibardo', 't9achar'].forEach(item => {
+                    document.getElementById(`qty-${item}`).innerText = 0;
+                    document.getElementById(`size-container-${item}`).style.display = 'none';
+                });
+                calculateTotal();
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'تأكيد طلب البوكس (الدفع عند الاستلام)';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('وقع خطأ، يرجى المحاولة مرة أخرى.');
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'تأكيد طلب البوكس (الدفع عند الاستلام)';
+            });
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
